@@ -1,4 +1,4 @@
-﻿/*
+/*
  * * * Compile_AHK SETTINGS BEGIN * * *
 
 [AHK2EXE]
@@ -1154,7 +1154,7 @@ Return
 
 openplugin: ;you would think consistently typing something in the ableton search bar would be easy
 loop, 1{
-Send,{ctrl down}{f}{ctrl up}
+Send,^f
 Sendinput % queryname
 WinWaitActive, ExcludeText - ExcludeTitle, , 0.5 ; prevents the keystrokes from desynchronizing when ableton lags during the search query.
 
@@ -1179,7 +1179,10 @@ tempautoadd := autoadd
 
 If (tempautoadd = 1){
 sleep, 112
-Send,{down}{enter}
+Send,{enter}
+sleep, 112
+Send,{enter}
+Send,^!b
 }
 Else{
 goto, skipautoadd
